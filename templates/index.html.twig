@@ -1,0 +1,15 @@
+
+{%  include "link1.html.twig" %}
+
+{% block body %}
+   <img src="{{  asset("./images/R.jpg")  }}">
+    <h1 style="font-size:36px;color:red;text-align:center;padding-top:7%">BIENVENNU DANS LE SITE LIVRAISON </h1>
+   
+    <div style="padding-left:42%;margin-top:2%"> 
+        <a  class="btn btn-primary" href="{{ path("app_register") }}"><i class="fas fa-sign-out-alt"></i>je cree mon compte  </a>
+        <a class="btn btn-info" href="{{ path("app_login")}}"> je me connecte   </a>
+    </div>
+   
+{% endblock %}
+
+{%  include "link2.html.twig"    %}

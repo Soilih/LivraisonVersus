@@ -1,0 +1,47 @@
+
+
+{%  include "link1.html.twig"  %}
+{% block body %}
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+
+    <body class="bg-dark">
+
+    <div class="sufee-login d-flex align-content-center flex-wrap">
+        <div class="container">
+            <div class="login-content">
+                <div class="login-logo">
+                    <a href="index.html">
+                        <img class="align-content" src="images/logo.png" alt="">
+                    </a>
+                </div>
+                <div class="login-form">
+                <div class="card border-primary">
+                    <div class="card-header"> JE CREE MON COMPTE </div>
+                  <div class="card-body">
+                   
+                     {{ form_start(registrationForm) }}
+                        {{ form_row(registrationForm.email) }}
+                         {{ form_row(registrationForm.telephone) }}
+                         {{ form_row(registrationForm.status) }}
+                         {{ form_row(registrationForm.numero_siret) }}
+                        {{ form_row(registrationForm.plainPassword, {
+                            label: 'Password'
+                        }) }}
+                        {{ form_row(registrationForm.agreeTerms) }}
+
+                        <button type="submit" class="btn btn-success">Inscription</button>
+                    {{ form_end(registrationForm) }}
+                  </div>
+                </div>
+
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{%  include "link2.html.twig"  %}

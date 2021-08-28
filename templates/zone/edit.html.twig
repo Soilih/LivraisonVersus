@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Zone{% endblock %}
+
+{% block body %}
+ <div id="right-panel" class="right-panel">
+    <div class="content">
+        <div class="animated fadeIn">
+            <!-- Widgets  -->
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="card">
+                        <div class="card-header card-pr">
+                            <strong class="card-title">GESTION  </strong>
+                        </div>
+                        <div class="card-body">
+                             {{ include('zone/_form.html.twig', {'button_label': 'Update'}) }}
+                            <br>
+                            <a class="btn btn-success btn-sm" href="{{ path('zone_index') }}">liste des zones  </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+</div>  
+
+   
+{% endblock %}

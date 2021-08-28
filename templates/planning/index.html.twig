@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+ <div id="right-panel" class="right-panel">
+    <div class="content">
+        <div class="animated fadeIn">
+            <!-- Widgets  -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-pr">
+                            <strong class="card-title">GESTION DE PLANNING  </strong>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered ">
+                              <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Heure de  Debut</th>
+                                        <th>Heure Fin</th>
+                                        <th>Jour Debut</th>
+                                        <th>Jour Fin</th>
+                                        <th>actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for planning in plannings %}
+                                    <tr>
+                                        <td>{{ planning.id }}</td>
+                                        <td>{{ planning.heureDebut ? planning.heureDebut|date('H:i:s') : '' }}</td>
+                                        <td>{{ planning.HeureFin ? planning.HeureFin|date('H:i:s') : '' }}</td>
+                                        <td>{{ planning.jourDebut }}</td>
+                                        <td>{{ planning.jourFin }}</td>
+                                        <td>
+                                            <a href="{{ path('planning_show', {'id': planning.id}) }}"><i style="font-size:22px ; color:green" class="fa fa-plus-square"></i></a>
+                                            <a href="{{ path('planning_edit', {'id': planning.id}) }}"><i style="font-size:22px ; color:green" class="fa fa-edit"></i></a>
+                                               <div style="display: inline-block;padding-left:2%"> {{ include('planning/_delete_form.html.twig') }} </div>
+                                        </td>
+                                    </tr>
+                                {% else %}
+                                    <tr>
+                                        <td colspan="8">no records found</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                            <br>
+                            <a class="btn btn-success btn-sm" href="{{ path('planning_new') }}">Creer un nouveau planning  </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+</div>  
+
+{% endblock %}

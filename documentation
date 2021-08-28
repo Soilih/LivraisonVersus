@@ -1,0 +1,29 @@
+
+ <div id="right-panel" class="right-panel">
+    <div class="content">
+        <div class="animated fadeIn">
+            <!-- Widgets  -->
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="card">
+                        <div class="card-header bg-primary mb-3">
+                            <strong class="card-title color-white">GESTION PAYS </strong>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered ">
+                               
+                            </table>
+                            <a class="btn btn-success btn-sm" href="{{ path('pays_new') }}">Creer un nouveau pays </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+</div>    
+<i style="font-size:22px ; color:green" class="fa fa-edit"></i>
+<i class="fa fa-trash-o" style="color: red"></i>
+
+les type de vehicule : http://ww2.ac-poitiers.fr/vehicules-materiels/IMG/pdf/1_cours_classification_des_vehicules.pdf#:~:text=1%29%20Les%20v%C3%A9hicules%20motoris%C3%A9s%202%29%20Les%20v%C3%A9hicules%20particuliers.,Les%20v%C3%A9hicules%20sp%C3%A9ciaux.%209%29%20Les%20v%C3%A9hicules%20non%20motoris%C3%A9s
+http://www.logistiqueconseil.org/Articles/Transport-routier/Vehicules-routiers.htm

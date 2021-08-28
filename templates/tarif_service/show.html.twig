@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TarifService{% endblock %}
+
+{% block body %}
+    <h1>TarifService</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ tarif_service.id }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ tarif_service.prix }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('tarif_service_index') }}">back to list</a>
+
+    <a href="{{ path('tarif_service_edit', {'id': tarif_service.id}) }}">edit</a>
+
+    {{ include('tarif_service/_delete_form.html.twig') }}
+{% endblock %}

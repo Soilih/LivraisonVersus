@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+ <div id="right-panel" class="right-panel">
+    <div class="content">
+        <div class="animated fadeIn">
+            <!-- Widgets  -->
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="card">
+                        <div class="card-header card-pr">
+                            <strong class="card-title">EDITER UN TYPE DE TARIF  </strong>
+                        </div>
+                        <div class="card-body">
+                                {{ include('type_tarif/_form.html.twig', {'button_label': 'Update'}) }}
+                            <br>  
+                            <a class="btn btn-success btn-sm" href="{{ path('type_tarif_index') }}">liste des type de tarif   </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+</div>  
+
+  
+
+  
+
+    {{ include('type_tarif/_delete_form.html.twig') }}
+{% endblock %}

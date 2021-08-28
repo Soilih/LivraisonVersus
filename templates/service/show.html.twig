@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Service{% endblock %}
+
+{% block body %}
+ <div id="right-panel" class="right-panel">
+    <div class="content">
+        <div class="animated fadeIn">
+            <!-- Widgets  -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-primary mb-3">
+                            <strong class="card-title  text-white">DESCRIPTION DE SERVICES </strong>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered ">
+                                <tbody style="text-align:center">
+                                    <tr>
+                                        <th>Id</th>
+                                        <td>{{ service.id }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Type de service </th>
+                                        <td>{{ service.typeservice.libelle }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Description du service </th>
+                                        <td>{{ service.detail }}</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <th>Condition de Vente de cette service </th>
+                                        <td>{{ service.conditionVente }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Moyen de Transport</th>
+                                        <td>{{ service.moyenTransport }}</td>
+                                    </tr>
+                                 </tbody>
+                                 
+                            </table>
+                            <a class="btn btn-success btn-sm" href="{{ path('service_new') }}">Creer un nouveau service </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-primary mb-3">
+                            <strong class="card-title  text-white">DESCRIPTION L'UTILISATEUR DE CETTE SERVICE </strong>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered ">
+                                <tbody style="text-align:center">
+                                    <tr>
+                                        <th>Email </th>
+                                        <td>{{ service.users.email }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Numero de siret  </th>
+                                        <td>{{ service.users.numerosiret }}</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <th>Status  </th>
+                                        <td>{{ service.users.status}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Telephone</th>
+                                        <td>{{ service.users.telephone }}</td>
+                                    </tr>
+                                 </tbody>
+                                 
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Users{% endblock %}
+
+{% block body %}
+ <div id="right-panel" class="right-panel">
+    <div class="content">
+        <div class="animated fadeIn">
+            <!-- Widgets  -->
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="card">
+                        <div class="card-header card-pr">
+                            <strong class="card-title">EDITER LES INFORMATIONS DE L'UTILISATEUR  </strong>
+                        </div>
+                        <div class="card-body">
+                               {{ include('users/_form.html.twig', {'button_label': 'Update'}) }}
+
+                           <a href="{{ path('users_index') }}">Consulter les utilisateurs </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+</div> 
+
+ 
+    
+{% endblock %}

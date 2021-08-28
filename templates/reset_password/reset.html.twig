@@ -1,0 +1,27 @@
+
+{%  include "link1.html.twig"   %}
+<body class="bg-dark">
+<div class="sufee-login d-flex align-content-center flex-wrap">
+    <div class="container">
+        <div class="login-content">
+            <div class="login-logo">
+                <a href="#">
+                    <img class="align-content" src="images/logo.png" alt="">
+                </a>
+            </div>
+            {% block body %}
+                <div class="card border-primary">
+                    <div class="card-body">
+                        <h4 class="card-title">Reinitialiser le mot de passe </h4>
+                        <div class="login-form">
+                        {{ form_start(resetForm) }}
+                            {{ form_row(resetForm.plainPassword) }}
+                            <button class="btn btn-primary">Reset password</button>
+                        {{ form_end(resetForm) }}
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+ {% endblock %}
+{%  include "link2.html.twig"   %}

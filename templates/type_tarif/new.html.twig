@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New TypeTarif{% endblock %}
+
+{% block body %}
+ <div id="right-panel" class="right-panel">
+    <div class="content">
+        <div class="animated fadeIn">
+            <!-- Widgets  -->
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="card">
+                        <div class="card-header card-pr">
+                            <strong class="card-title">AJOUTER TYPE TARIF  </strong>
+                        </div>
+                        <div class="card-body">
+                            
+                              {{ include('type_tarif/_form.html.twig') }}
+                              <br>
+                            <a class="btn btn-success btn-sm" href="{{ path('type_tarif_index') }}">liste type tarif  </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+</div>    
+
+{% endblock %}

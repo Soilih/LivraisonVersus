@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  
+ <div id="right-panel" class="right-panel">
+    <div class="content">
+        <div class="animated fadeIn">
+            <!-- Widgets  -->
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="card">
+                        <div class="card-header card-pr">
+                            <strong class="card-title">GESTION TYPE TARIF  </strong>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered ">
+                               <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Libelle</th>
+                                        <th>actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for type_tarif in type_tarifs %}
+                                    <tr>
+                                        <td>{{ type_tarif.id }}</td>
+                                        <td>{{ type_tarif.libelle }}</td>
+                                        <td>
+                                            <div style="display: inline-block;padding-left:2%"> {{ include('type_tarif/_delete_form.html.twig') }} </div> 
+                                            <a href="{{ path('type_tarif_edit', {'id': type_tarif.id}) }}"><i style="font-size:22px ; color:green" class="fa fa-edit"></i></a>
+                                           
+                                        </td>
+                                    </tr>
+                                {% else %}
+                                    <tr>
+                                        <td colspan="3">no records found</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+                            <a class="btn btn-success btn-sm"   href="{{ path('type_tarif_new') }}">Ajouter un type de tarif </a>
+                         
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+</div>   
+{% endblock %}

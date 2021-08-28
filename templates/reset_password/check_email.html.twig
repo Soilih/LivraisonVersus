@@ -1,0 +1,27 @@
+
+{%  include "link1.html.twig"   %}
+
+{% block body %}
+<body class="bg-dark">
+<div class="container">
+    <div class="row"> 
+       <div class="col-xs-1-12">
+           <div class="card border-primary">
+                <div class="card-header">Reset your password</div>
+                    <div class="card-body">
+                        <p>
+                            S’il existe un compte correspondant à votre adresse e-mail, un e-mail contenant un lien que vous pouvez utiliser pour réinitialiser votre mot de passe a été envoyé.
+                            Ce lien expirera dans {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.
+                        </p>
+                        <p> Si vous ne recevez pas d’e-mail, veuillez vérifier votre dossier spam ou <a href="{{ path('app_forgot_password_request') }}">ressayer</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div> 
+       </div>
+        
+    </div>
+</div>
+
+{% endblock %}
+{%  include "link2.html.twig"   %}

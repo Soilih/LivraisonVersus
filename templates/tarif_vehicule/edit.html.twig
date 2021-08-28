@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit TarifVehicule{% endblock %}
+
+{% block body %}
+    <h1>Edit TarifVehicule</h1>
+
+    {{ include('tarif_vehicule/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('tarif_vehicule_index') }}">back to list</a>
+
+    {{ include('tarif_vehicule/_delete_form.html.twig') }}
+{% endblock %}

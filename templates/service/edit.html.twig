@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+  <div id="right-panel" class="right-panel">
+    <div class="content">
+        <div class="animated fadeIn">
+            <!-- Widgets  -->
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="card">
+                         <div class="card-header bg-primary mb-3">
+                            <strong class="card-title  text-white">MODIFIER UN SERVICE  </strong>
+                        </div>
+                        <div class="card-body">
+                            {{ include('service/_form.html.twig', {'button_label': 'Update'}) }}
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+</div> 
+    
+
+   
+
+{% endblock %}

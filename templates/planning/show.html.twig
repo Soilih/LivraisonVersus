@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Planning{% endblock %}
+
+{% block body %}
+ 
+ <div id="right-panel" class="right-panel">
+    <div class="content">
+        <div class="animated fadeIn">
+            <!-- Widgets  -->
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="card">
+                        <div class="card-header card-pr">
+                            <strong class="card-title"> Description du planning </strong>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered ">
+                                <tbody>
+                                    <tr>
+                                        <th>Id</th>
+                                        <td>{{ planning.id }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> Heure debut</th>
+                                        <td>{{ planning.heureDebut ? planning.heureDebut|date('H:i:s') : '' }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Heure fin</th>
+                                        <td>{{ planning.HeureFin ? planning.HeureFin|date('H:i:s') : '' }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Jour de debut</th>
+                                        <td>{{ planning.jourDebut }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Jour de Fin</th>
+                                        <td>{{ planning.jourFin }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Detail du planning </th>
+                                        <td>{{ planning.detail }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Type de d'horaire </th>
+                                        <td>{{ planning.type }}</td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+</div> 
+
+    
+{% endblock %}
