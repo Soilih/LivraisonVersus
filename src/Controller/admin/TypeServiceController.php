@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\admin;
 
 use App\Entity\TypeService;
 use App\Form\TypeServiceType;
@@ -11,7 +11,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/type/service")
+ *
+ * @Route("admin/type/service")
  */
 class TypeServiceController extends AbstractController
 {

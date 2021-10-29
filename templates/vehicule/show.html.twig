@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vehicule{% endblock %}
+
+{% block body %}
+  <div id="right-panel" class="right-panel">
+    <div class="content">
+        <div class="animated fadeIn">
+            <!-- Widgets  -->
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="card">
+                        <div class="card-header bg-primary mb-3">
+                            <strong class="card-title color-white">DESCRIPTION DE VEHICULES </strong>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered ">
+                                <tbody>
+                                    <tr>
+                                        <th>Id</th>
+                                        <td>{{ vehicule.id }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Marque</th>
+                                        <td>{{ vehicule.marque }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Volume</th>
+                                        <td>{{ vehicule.volume }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Puissance</th>
+                                        <td>{{ vehicule.puissance }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Detail</th>
+                                        <td>{{ vehicule.detail }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Etat</th>
+                                        <td>{{ vehicule.etat }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Modele</th>
+                                        <td>{{ vehicule.modele }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Matricule</th>
+                                        <td>{{ vehicule.matricule }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Kilometrage</th>
+                                        <td>{{ vehicule.kilometrage }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Galerie</th>
+                                        <td>{{ vehicule.galerie }}</td>
+                                    </tr>
+                                </tbody>
+                               
+                            </table>
+                            <a class="btn btn-success btn-sm" href="{{ path('vehicule_new') }}">Creer un vehicule </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+</div>  
+
+    <a href="{{ path('vehicule_index') }}">back to list</a>
+
+    {{ include('vehicule/_delete_form.html.twig') }}
+{% endblock %}

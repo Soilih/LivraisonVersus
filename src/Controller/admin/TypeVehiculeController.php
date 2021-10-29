@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\admin;
 
 use App\Entity\TypeVehicule;
 use App\Form\TypeVehiculeType;
@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/type/vehicule")
+ * @Route("admin/type/vehicule")
  */
 class TypeVehiculeController extends AbstractController
 {

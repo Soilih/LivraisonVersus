@@ -21,20 +21,33 @@
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
+                  {% if is_granted("ROLE_ADMIN")  %}
                     <li class="active">
                         <a href="{{ path("admin")}}"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                    </li> 
+                    {% else %}
+                    
+                     <li class="active">
+                        <a href="{{ path("users")}}"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                     </li>
+                    {% endif %}
+
+                   
+                  
                    
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Gestion des services </a>
                         <ul class="sub-menu children dropdown-menu">                
                             <li><i class="fa fa-puzzle-piece"></i><a href="{{ path("service_new") }}">Creer une service </a></li>
                             <li><i class="fa fa-table"></i><a href="{{ path("service_index") }}"> Liste des services </a></li>
-
+                        {% if is_granted('ROLE_ADMIN')  %}  
                             <li><i class="fa fa-id-card-o"></i><a href="{{  path('type_service_new') }}"> Creer Type de service </a></li>
                             <li><i class="fa fa-table"></i><a href="{{  path('type_service_index') }}">Liste de type de service </a></li>
+                        {% endif %} 
                         </ul>
                     </li>
+                   
+                    {% if is_granted('ROLE_ADMIN') %} 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon  fa fa-users"></i>Gestion des utilisateurs  </a>
                         <ul class="sub-menu children dropdown-menu">
@@ -42,14 +55,16 @@
                             <li><i class="fa fa-table"></i><a href="{{ path("users_index")}}">  Liste des utilisateurs</a></li>
                         </ul>
                     </li>
+                    {% endif %}
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-car"></i>Gestion de vehicule </a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa- fa-truck"></i><a href="#">creer un vehicule</a></li>
-                            <li><i class="menu-icon fa fa-table"></i><a href="#">Liste des vehicules </a></li>
+                            <li><i class="menu-icon fa fa- fa-truck"></i><a href="{{ path("vehicule_new") }}">creer un vehicule</a></li>
+                            <li><i class="menu-icon fa fa-table"></i><a href="{{ path("vehicule_index") }}">Liste des vehicules </a></li>
                             
                         </ul>
                     </li>
+                    {% if is_granted("ROLE_ADMIN")  %}
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-car"></i>Gestion de type vehicule </a>
                         <ul class="sub-menu children dropdown-menu">
@@ -58,16 +73,20 @@
                             
                         </ul>
                     </li>
+                    {%endif %}
     
                     <li class="menu-item-has-children dropdown">
                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-industry"></i>Gestion de l'entreprise </a>
                         <ul class="sub-menu children dropdown-menu">
+                          {% if is_granted("ROLE_ADMIN")  %}
                             <li><i class="menu-icon  fa fa-plus-circle"></i><a href="#">Ajouter les proffessions </a></li>
                             <li><i class="menu-icon  fa fa-plus-circle"></i><a href="#">Liste des proffessions </a></li> 
-                            <li><i class="menu-icon  fa fa-plus-circle"></i><a href="#">Ajouter les informations </a></li>
-                            <li><i class="menu-icon fa fa-sitemap"></i><a href="#">Description des utilisateurs </a></li>
+                         {%  endif %}
+                            <li><i class="menu-icon  fa fa-plus-circle"></i><a href="{{ path("entreprise_new") }}">Ajouter l'entreprise </a></li> 
+                            <li><i class="menu-icon fa fa-sitemap"></i><a href="{{ path("entreprise_index") }}">Liste des entreprises </a></li> 
                         </ul>
                     </li>
+                    {%  if  is_granted('ROLE_ADMIN')  %}
                      <li class="menu-item-has-children dropdown">
                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa  fa-globe"></i>Gestion zones & Pays  </a>
                         <ul class="sub-menu children dropdown-menu">
@@ -77,15 +96,19 @@
                             <li><i class="menu-icon fa fa-sitemap"></i><a href="{{ path("zone_index") }}"> Consulter les zones </a></li>
                         </ul>
                     </li>
+                    {% endif %}
+
                     <li class="menu-item-has-children dropdown">
                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-money"></i>Gestion Tarifications</a> 
                         <ul class="sub-menu children dropdown-menu">
+                        {% if is_granted('ROLE_ADMIN') %}
                             <li><i class="menu-icon  fa fa-plus-circle"></i><a href="{{ path("type_tarif_new") }}">Ajouter un type de Tarif   </a></li>
                             <li><i class="menu-icon  fa fa-sitemap"></i><a href="{{  path("type_tarif_index")  }}">Liste des type de tarif    </a></li>
-                            <li><i class="menu-icon  fa fa-plus-circle"></i><a href="#">Ajouter Tarif des services  </a></li>
-                            <li><i class="menu-icon fa fa-sitemap"></i><a href="#"> Liste des tarifs/services </a></li>
-                            <li><i class="menu-icon  fa fa-plus-circle"></i><a href="#">Ajouter Tarif des vehicules  </a></li>
-                            <li><i class="menu-icon fa fa-sitemap"></i><a href="#"> Liste des tarifs/vehicules </a></li>
+                        {%  endif %}
+                            <li><i class="menu-icon  fa fa-plus-circle"></i><a href="">Ajouter Tarif des services  </a></li>
+                            <li><i class="menu-icon fa fa-sitemap"></i><a href=""> Liste des tarifs/services </a></li>
+                            <li><i class="menu-icon  fa fa-plus-circle"></i><a href="{{ path("tarif_vehicule_new") }}">Ajouter Tarif des vehicules  </a></li>
+                            <li><i class="menu-icon fa fa-sitemap"></i><a href="{{ path("tarif_vehicule_index") }}"> Liste des tarifs/vehicules </a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
@@ -102,6 +125,7 @@
                             <li><i class="menu-icon  fa fa-sitemap"></i><a href="{{ path("planning_index") }}">consulter le planning </a></li>
                         </ul>
                     </li>
+                      {% if is_granted("ROLE_ADMIN")  %}
                     <li class="menu-item-has-children dropdown">
                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-industry"></i>Utilisateur/services </a>
                         <ul class="sub-menu children dropdown-menu">
@@ -109,6 +133,7 @@
                             <li><i class="menu-icon  fa fa-sitemap"></i><a href="#">Consulter les services des utilisateurs</a></li>
                         </ul>
                     </li>
+                    {% endif %}
                    
                    
                     <li class="menu-item-has-children dropdown">
@@ -119,7 +144,7 @@
                             <li><i class="menu-icon fa fa-line-chart"></i><a href="#">Gestion type de services  </a></li>
                         </ul>
                     </li>
-
+                    {% if is_granted("ROLE_ADMIN")  %}
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-map"></i>Geolocalisation</a>
                         <ul class="sub-menu children dropdown-menu">
@@ -127,6 +152,7 @@
                             <li><i class="menu-icon fa fa-street-view"></i><a href="#">vehicules </a></li>
                         </ul>
                     </li>
+                    {% endif %}
                    
                 </ul>
             </div><!-- /.navbar-collapse -->

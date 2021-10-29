@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+ <div id="right-panel" class="right-panel">
+    <div class="content">
+        <div class="animated fadeIn">
+            <!-- Widgets  -->
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="card">
+                        <div class="card-header bg-primary mb-3">
+                            <strong class="card-title color-white">Description de l'entreprise</strong > 
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered ">
+                               <tbody>
+                                <tr>
+                                    <th>Id</th>
+                                    <td>{{ entreprise.id }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Nom</th>
+                                    <td>{{ entreprise.nom }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Prenom</th>
+                                    <td>{{ entreprise.prenom }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Telephone</th>
+                                    <td>{{ entreprise.telephone }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Email</th>
+                                    <td>{{ entreprise.email }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Adresse</th>
+                                    <td>{{ entreprise.adresse }}</td>
+                                </tr>
+                                <tr>
+                                    <th>CodeNaf</th>
+                                    <td>{{ entreprise.codeNaf }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Detail</th>
+                                    <td>{{ entreprise.detail }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Logo</th>
+                                    <td>{{ entreprise.logo }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Site</th>
+                                    <td> <a href="{{ entreprise.site }}">consulter le site </a> </td>
+                                </tr>
+                                <tr>
+                                    <th>Apropos</th>
+                                    <td>{{ entreprise.Apropos }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Postal</th>
+                                    <td>{{ entreprise.postal }}</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                            <a class="btn btn-success btn-sm" href="{{ path('entreprise_new') }}">Creer une entreprise</a>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+</div>  
+   
+       
+{% endblock %}

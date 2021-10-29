@@ -78,12 +78,18 @@ class Users implements UserInterface
      */
     private $entreprises;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Galerie::class, mappedBy="users")
+     */
+    private $galeries;
+
     public function __construct()
     {
         $this->plannings = new ArrayCollection();
         $this->vehicules = new ArrayCollection();
         $this->services = new ArrayCollection();
         $this->entreprises = new ArrayCollection();
+        $this->galeries = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -329,6 +335,36 @@ class Users implements UserInterface
             // set the owning side to null (unless already changed)
             if ($entreprise->getUsers() === $this) {
                 $entreprise->setUsers(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Galerie[]
+     */
+    public function getGaleries(): Collection
+    {
+        return $this->galeries;
+    }
+
+    public function addGalery(Galerie $galery): self
+    {
+        if (!$this->galeries->contains($galery)) {
+            $this->galeries[] = $galery;
+            $galery->setUsers($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGalery(Galerie $galery): self
+    {
+        if ($this->galeries->removeElement($galery)) {
+            // set the owning side to null (unless already changed)
+            if ($galery->getUsers() === $this) {
+                $galery->setUsers(null);
             }
         }
 

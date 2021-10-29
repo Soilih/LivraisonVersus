@@ -24,7 +24,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                {% for planning in plannings %}
+                                {% for planning in app.user.plannings %}
                                     <tr>
                                         <td>{{ planning.id }}</td>
                                         <td>{{ planning.heureDebut ? planning.heureDebut|date('H:i:s') : '' }}</td>

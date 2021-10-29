@@ -1,9 +1,7 @@
 {% extends 'base.html.twig' %}
 
-
-
 {% block body %}
-
+  
  <div id="right-panel" class="right-panel">
     <div class="content">
         <div class="animated fadeIn">
@@ -12,12 +10,12 @@
                 <div class="col-md-7">
                     <div class="card">
                         <div class="card-header bg-primary mb-3">
-                            <strong class="card-title color-white">EDITER UN TARIF DE VEHICULE  </strong>
+                            <strong class="card-title color-white">CREER L'ENTREPRISE </strong>
                         </div>
                         <div class="card-body">
-                             {{ include('tarif_vehicule/_form.html.twig', {'button_label': 'Update'}) }}
-                               <a href="{{ path('tarif_vehicule_index') }}">back to list</a>
-                           
+                              {{ include('entreprise/_form.html.twig') }}
+                              <br>
+                            <a class="btn btn-success btn-sm" href="{{ path('entreprise_index') }}">LES ENTREPRISES </a>
                         </div>
                     </div>
                 </div>
@@ -26,8 +24,6 @@
     </div>
  </div>
 </div>
-
-  
 
   
 

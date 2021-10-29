@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\admin;
 
 use App\Entity\TypeTarif;
 use App\Form\TypeTarifType;
@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/type/tarif")
+ * @Route("admin/type/tarif")
  */
 class TypeTarifController extends AbstractController
 {

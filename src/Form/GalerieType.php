@@ -2,26 +2,26 @@
 
 namespace App\Form;
 
-use App\Entity\TarifService;
+use App\Entity\Galerie;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class TarifServiceType extends AbstractType
+class GalerieType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('prix')
-            ->add('service')
-            ->add('typeTarif')
+            ->add('image')
+            ->add('titre')
+            ->add('users')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => TarifService::class,
+            'data_class' => Galerie::class,
         ]);
     }
 }

@@ -17,4 +17,14 @@ class IndexController extends AbstractController
             'controller_name' => 'IndexController',
         ]);
     }
+
+     /**
+     * @Route("/users", name="users")
+     */
+    public function users(): Response
+    {
+        return $this->render('users.html.twig', [
+            'controller_name' => 'IndexController',
+        ]);
+    }
 }

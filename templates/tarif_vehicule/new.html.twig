@@ -3,9 +3,28 @@
 {% block title %}New TarifVehicule{% endblock %}
 
 {% block body %}
-    <h1>Create new TarifVehicule</h1>
+ <div id="right-panel" class="right-panel">
+    <div class="content">
+        <div class="animated fadeIn">
+            <!-- Widgets  -->
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="card">
+                        <div class="card-header bg-primary mb-3">
+                            <strong class="card-title color-white">AJOUTER TARIF DES VEHICULES </strong>
+                        </div>
+                        <div class="card-body">
+                              {{ include('tarif_vehicule/_form.html.twig') }}
+                             <a href="{{ path('tarif_vehicule_index') }}">back to list</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+</div> 
 
-    {{ include('tarif_vehicule/_form.html.twig') }}
+ 
 
-    <a href="{{ path('tarif_vehicule_index') }}">back to list</a>
 {% endblock %}

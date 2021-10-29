@@ -10,34 +10,29 @@
             <div class="animated fadeIn">
                 <!-- Widgets  -->
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-7">
                         <aside class="profile-nav alt">
                             <section class="card">
                                 <div class="card-header user-header alt twt-feed blue-bg">
                                     <div class="media">
                                         <a href="#">
-                                            <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="images/admin.jpg">
+                                            <img class="align-self-center rounded-circle mr-3" style="width:95px; height:95px;" alt="" src="images/admin.jpg">
                                         </a>
-                                        <div class="media-body">
-                                            <h2 class="text-light display-6"></h2>
-                                            <p>{{  app.user.status  }}</p>
-                                        </div>
+                                       
                                     </div>
                                 </div>
-
-
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">
-                                        <a href="#"> <i class="fa fa-envelope-o"></i> EMAIL :   <span class="badge badge-primary pull-right">{{ app.user.email   }}</span></a>
+                                      <p styme="font-size:19px">  <i class="fa fa-envelope-o" style="margin-left:1% ;padding-left:2%"></i> EMAIL :   <span class="badge badge-primary pull-right">{{ app.user.email   }} </span> </p>
                                     </li>
                                     <li class="list-group-item">
-                                        <a href="#"> <i class="fa fa-phone"></i> TELEPHONE <span class="badge badge-danger pull-right">{{ app.user.telephone }}</span></a>
+                                        <a href="#"> <i class="fa fa-phone" style="margin-left:1% ;padding-left:2%"></i>  TELEPHONE :<span class="badge badge-primary pull-right">{{ app.user.telephone }}</span></a>
                                     </li>
                                     <li class="list-group-item">
-                                        <a href="#"> <i class="fa fa-plus-square-o"></i> Numero de siret <span class="badge badge-success pull-right">{{ app.user.NumeroSiret	}}</span></a>
+                                        <a href="#"> <i class="fa fa-qrcode" style="margin-left:1% ;padding-left:2%"></i> NUMERO DE SIRET :<span class="badge badge-primary pull-right">{{ app.user.NumeroSiret	}}</span></a>
                                     </li>
                                     <li class="list-group-item">
-                                        <a href="#"> <i class="fa fa-comments-o"></i> Message <span class="badge badge-warning pull-right r-activity">03</span></a>
+                                        <a href="#"> <i class="fa fa-user" style="margin-left:1% ;padding-left:2%"></i>    STATUS :   <span class="badge badge-primary pull-right">{{app.user.status }} </span></a>
                                     </li>
                                 </ul>
 

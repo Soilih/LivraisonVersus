@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+ <div id="right-panel" class="right-panel">
+    <div class="content">
+        <div class="animated fadeIn">
+            <!-- Widgets  -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header bg-primary mb-3">
+                            <strong class="card-title color-white">GESTION DES VEHICULES </strong>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered ">
+                                 <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Marque</th>
+                                        <th>Volume</th>
+                                       <th>Etat</th>
+                                        <th>Modele</th>
+                                        <th>Matricule</th>
+                                        <th>Kilometrage</th>
+                                        <th>actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for vehicule in app.user.vehicules %}
+                                    <tr>
+                                        <td>{{ vehicule.id }}</td>
+                                        <td>{{ vehicule.marque }}</td>
+                                        <td>{{ vehicule.volume }}</td>
+                                       <td>{{ vehicule.etat }}</td>
+                                        <td>{{ vehicule.modele }}</td>
+                                        <td>{{ vehicule.matricule }}</td>
+                                        <td>{{ vehicule.kilometrage }}</td>
+                                       
+                                        <td>
+                                            <a href="{{ path('vehicule_show', {'id': vehicule.id}) }}">show</a>
+                                            <a href="{{ path('vehicule_edit', {'id': vehicule.id}) }}">edit</a>
+                                        </td>
+                                    </tr>
+                                {% else %}
+                                    <tr>
+                                        <td colspan="11">no records found</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                            <a class="btn btn-success btn-sm" href="{{ path('vehicule_new') }}">Ajouter vehicule </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+</div>  
+
+
+        
+
+
+    <a href="{{ path('vehicule_new') }}">Create new</a>
+{% endblock %}
